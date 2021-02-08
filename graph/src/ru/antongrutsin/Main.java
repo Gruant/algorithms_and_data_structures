@@ -77,7 +77,7 @@ public class Main {
         }
         public void addEdge(int start, int end) {
             adjacencyMatrix[start][end] = 1; // change 1 to weight for weight
-//            adjacencyMatrix[end][start] = 1; // delete this for direction
+            adjacencyMatrix[end][start] = 1; // delete this for direction
         }
         public void displayVertex(int v) {
             System.out.print(vertexList[v] + " ");
@@ -112,16 +112,19 @@ public class Main {
 //        }
 
 
-        public void widthTraverse() {
+        public void widthTraverse(int start, int end) {
             Queue queue = new Queue(MAX_VERTICES);
-            vertexList[0].wasVisited = true;
-            queue.insert(0);
+            vertexList[start].wasVisited = true;
+            queue.insert(start);
             while (!queue.isEmpty()) {
                 int current = queue.remove();
                 displayVertex(current);
                 int next;
                 while ((next = getUnvisitedVertex(current)) != -1) {
                     vertexList[next].wasVisited = true;
+                    if (next == end){
+                        return;
+                    }
                     queue.insert(next);
                 }
             }
@@ -152,6 +155,6 @@ public class Main {
         g.addEdge(3, 8);
         g.addEdge(1, 3);
         System.out.println();
-        g.widthTraverse();
+        g.widthTraverse(0, 3);
     }
 }
