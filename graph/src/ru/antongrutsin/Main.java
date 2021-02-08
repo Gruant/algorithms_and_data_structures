@@ -136,11 +136,16 @@ public class Main {
 
     public static void main(String[] args) {
         Graph g = new Graph();
-        g.addVertex('a');
-        g.addVertex('b');
-        g.addVertex('c');
-        g.addVertex('d');
-        g.addVertex('e');
+        int MAXVERTEX = 10;
+        int charA = 97;
+        for (int i = 0; i < MAXVERTEX; i++) {
+            g.addVertex((char)charA++);
+        }
+        g.addEdge(1, 2);
+        g.addEdge(2, 5);
+        g.addEdge(3, 4);
+        g.addEdge(0, 4);
+        g.addEdge(1, 1);
         g.addEdge(1, 2);
         g.addEdge(2, 0);
         g.addEdge(3, 4);
