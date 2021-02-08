@@ -145,12 +145,12 @@ public class Main {
         g.addEdge(2, 5);
         g.addEdge(3, 4);
         g.addEdge(0, 4);
-        g.addEdge(1, 1);
-        g.addEdge(1, 2);
-        g.addEdge(2, 0);
-        g.addEdge(3, 4);
-        g.addEdge(0, 4);
-        g.addEdge(1, 1);
+        g.addEdge(6, 1);
+        g.addEdge(7, 9);
+        g.addEdge(2, 6);
+        g.addEdge(3, 7);
+        g.addEdge(3, 8);
+        g.addEdge(1, 3);
         System.out.println();
         g.widthTraverse();
     }
