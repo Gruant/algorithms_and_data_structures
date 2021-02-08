@@ -77,7 +77,7 @@ public class Main {
         }
         public void addEdge(int start, int end) {
             adjacencyMatrix[start][end] = 1; // change 1 to weight for weight
-            adjacencyMatrix[end][start] = 1; // delete this for direction
+//            adjacencyMatrix[end][start] = 1; // delete this for direction
         }
         public void displayVertex(int v) {
             System.out.print(vertexList[v] + " ");
